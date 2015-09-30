@@ -1,8 +1,10 @@
 #importar bibliotecas
 import matplotlib.pyplot as plt
 
+#cartas embaralhadas
 lista = [11, 18, 3, 1, 16, 12, 6, 19, 5, 0, 14, 4, 17, 9, 13, 7, 10, 15, 2, 8]
 N = 20
+#imprimir lista de cartas
 print ("Lista original:" , lista)
 y= lista
 x= range(0,N,1)
@@ -22,7 +24,20 @@ plt.savefig("fig/bubble-inicio.png")
 #fechar a figura
 plt.close()
 
-troca = 0
+semtroca = 1
+troca = 1
+
+for i in range (0,N-1,1):
+    for j in range (i+1,N,1):
+        plt.figure()
+        plt.plot(x,'or')
+        plt.plot(lista,'ob')
+        plt.title("gráfico colorido")
+        plt.xlabel("numero de cartas")
+        plt.ylabel("valores das cartas")
+        plt.savefig("fig/bubble-it-{}.png".format(semtroca))
+        plt.close()
+        semtroca = semtroca + 1
 #esse for define o intervalo de 0 a N-1, andando de 1 em 1.
 for i in range (0,N-1,1):
 #esse for vê o número seguinte ao i, até N, andando de 1 em 1.
